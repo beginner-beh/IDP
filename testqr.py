@@ -38,9 +38,9 @@ def main():
     try:
         hostname = socket.gethostname()
         local_ip = socket.gethostbyname(hostname)
-        share_url = f"http://{local_ip}:8501/"
+        share_url = f"https://z8vjom2c2uvgdul7bbbebz.streamlit.app/"
     except:
-        share_url = "http://localhost:8501/"
+        share_url = "https://z8vjom2c2uvgdul7bbbebz.streamlit.app/"
 
     st.image(generate_qr_code(share_url), width=200, caption=share_url)
 
