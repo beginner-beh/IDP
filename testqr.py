@@ -30,7 +30,7 @@ def generate_qr_code(url):
 def main():
     st.set_page_config(page_title="Real-Time Health Monitor", layout="wide")
     st.title("🌐 Real-Time Health Monitor")
-    st.markdown("Scan the QR code to share this page on another device:")
+    st.markdown("Scan the QR code to view this page on another device:")
 
     # Auto-refresh every 2 seconds
     st_autorefresh(interval=2000, limit=None, key="datarefresh")
@@ -38,11 +38,11 @@ def main():
     try:
         hostname = socket.gethostname()
         local_ip = socket.gethostbyname(hostname)
-        share_url = f"https://z8vjom2c2uvgdul7bbbebz.streamlit.app/"
+        share_url = "https://z8vjom2c2uvgdul7bbbebz.streamlit.app/"
     except:
         share_url = "https://z8vjom2c2uvgdul7bbbebz.streamlit.app/"
 
-    st.image(generate_qr_code(share_url), width=200, caption=share_url)
+    st.image(generate_qr_code(share_url), width=200)  # Removed caption here
 
     st.markdown("---")
     st.subheader("Live Vital Signs (Auto-refresh every 2 seconds)")
